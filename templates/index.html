@@ -1,0 +1,47 @@
+{% extends "base.html" %} {% block content %}
+
+<!--<h2>Boundary Detection</h2>!-->
+
+<div>
+    <form id="upload-file" method="post" enctype="multipart/form-data">
+        <h4>Select the horizon image</h4>
+        <label for="imageUpload" class="upload-label">
+            Upload Image
+        </label>
+        <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+    </form>
+
+    <div class="image-section" style="display:none;">
+        <div>
+        <img class="img-preview" id="imagePreview" src="">
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg "  style="margin-bottom: 2em;" id="btn-predict">Predict!</button>
+        </div>
+    </div>
+    <div>
+        <div class="dummy_output" style="display:none">
+        <h4>Boundary drawn</h4>
+    </div>
+    
+    <div class="dummy-section" style="display:none;">  
+        <img class="img-preview" id="imgPreview1" src="">  
+    </div>
+
+
+    <div class="dummy-section_1" style="display:none;">
+        <h4><label for="model">Choose the model type</label></h4>
+            <select name="model" id="model">
+              <option value="Simple">Simple</option>
+              <option value="Viterbi">Viterbi</option>
+            </select>
+        <br/><br/>
+        <button type="button" class="btn btn-primary btn-lg " style="margin-bottom: 2em;" id="btn-predict_1">Model Output</button>     
+    </div> 
+    <div class="loader" style="display:none;"></div>
+
+
+</div>
+
+{% endblock %}
+<!-- <img id="CaptchaImg" alt="Captcha" src="" style="display:none;" /> !-->
